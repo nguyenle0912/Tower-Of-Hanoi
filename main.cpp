@@ -7,25 +7,14 @@
 
 int main(int argc, char** argv)
 {
-	if (argc != 3)
-	{
-		std::cout << "Usage:  assignment04 [input file] [output file]" << std::endl;
-		return 0;
-	}
+	
+    	std::ofstream fout("towerOfHanoi.txt");
 
-	std::ifstream fin(argv[1]);
-    std::ofstream fout(argv[2]);
 
-	unsigned int n = 0;
-	if (!(fin >> n))
-	{
-		std::cerr << "Invalid input file!" << std::endl;
-	}
-	else
-	{ //n is number of disks
-		Hanoi problem(n);
+	 //3 is number of disks, change this number to the desired number of disks
+		Hanoi problem(3);
 		problem.Solve(fout);	
-	}
+
   
 	return 0;
 }
